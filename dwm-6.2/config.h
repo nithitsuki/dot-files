@@ -1,4 +1,9 @@
+#include <X11/XF86keysym.h>
 /* See LICENSE file for copyright and license details. */
+
+/**Brightness Control*/
+static const char *brupcmd[] = { "brightnessctl", "set", "10%+", NULL };
+static const char *brdowncmd[] = { "brightnessctl", "set", "10%-", NULL };
 
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
@@ -92,6 +97,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
+	{ 0, XF86XK_MonBrightnessUp,    spawn,	   {.v = brupcmd} },
+	{ 0, XF86XK_MonBrightnessDown,  spawn,     {.v = brdowncmd} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)

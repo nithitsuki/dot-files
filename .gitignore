@@ -1,0 +1,2 @@
+#hyprland.conf must be a symlink to your main config
+configs/hypr/hyprland.conf

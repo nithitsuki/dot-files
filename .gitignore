@@ -1,2 +1,4 @@
 #hyprland.conf must be a symlink to your main config
 .config/hypr/hyprland.conf
+
+.config/nvim/lazy-lock.json
